@@ -35,7 +35,7 @@ def load():
 
             dbg(c.g + "%s cached streams imported%s", str(len(g.streams)), c.w)
 
-        except (EOFError, IOError):
+        except (EOFError, IOError,pickle.UnpicklingError):
             dbg(c.r + "Cache file failed to open" + c.w)
 
         streams.prune()
